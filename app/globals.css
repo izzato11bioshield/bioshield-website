@@ -1,0 +1,107 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+  overflow-y: scroll;
+}
+@keyframes floatLogo {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-12px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+/* ============================================================
+   BIOSHIELD — CONTINUOUS NEWS TICKER
+   ============================================================ */
+
+@keyframes bioshieldTickerScroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.bioshield-ticker {
+  animation: bioshieldTickerScroll 60s linear infinite;
+}
+
+.bioshield-ticker:hover {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bioshield-ticker {
+    animation: none;
+  }
+}
+/* ============================================================
+   BIOSHIELD — WAVES MOVE AND FADE WHILE SCROLLING
+   ============================================================ */
+
+/* Blue waves move and fade as Sound familiar? scrolls */
+
+@keyframes waveSlideAway {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+  45% {
+    transform: translateX(-5%);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateX(-13%);
+    opacity: 0;
+  }
+}
+
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .bioshield-scroll-waves {
+      animation-name: waveSlideAway;
+      animation-duration: 1s;
+      animation-timing-function: linear;
+      animation-fill-mode: both;
+      animation-timeline: --challenges-scroll;
+      animation-range: entry 0% exit 100%;
+    }
+  }
+}
+
+html {
+  scroll-behavior: auto;
+}
