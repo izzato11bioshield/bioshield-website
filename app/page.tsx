@@ -1836,173 +1836,273 @@ function ValueProposition() {
 
 
 function ContactSection() {
+  const team = [
+    {
+      name: "Izzat Azmi",
+      firstName: "Izzat",
+      role: "CFO | BioShield",
+      email: "izzato11bioshield@gmail.com",
+      phone: "646-371-0213",
+      phoneLink: "+16463710213",
+      linkedin: "linkedin.com/in/izzat-azmi-1b1244222",
+    },
+    {
+      name: "Zach Burton",
+      firstName: "Zach",
+      role: "CEO | BioShield",
+      email: "microbialzach@gmail.com",
+      phone: "573-592-9045",
+      phoneLink: "+15735929045",
+      linkedin: "linkedin.com/in/zachary-burton-6a1372109",
+    },
+  ];
+
   return (
     <section
       id="investors"
-      className="relative z-10 w-full scroll-mt-28 overflow-hidden bg-gradient-to-br from-[#2b83ad] via-[#256f91] to-[#1e5d79] px-5 py-20 text-white shadow-2xl sm:px-8 sm:py-24"
+      className="relative isolate z-10 w-full scroll-mt-28 overflow-hidden bg-[#34738e] px-5 pb-5 pt-16 sm:px-8 lg:px-12 lg:pt-20"
     >
-      <div className="mx-auto max-w-[1150px]">
-        <div className="text-center">
-          <p className="text-sm font-bold uppercase tracking-[0.25em] text-[#bde9f3]">
-            Investor Relations
-          </p>
+      {/* FULL-WIDTH OCEAN WAVE BACKGROUND */}
+      <svg
+        viewBox="0 0 1600 900"
+        preserveAspectRatio="none"
+        className="pointer-events-none absolute inset-0 -z-10 h-full w-full"
+        aria-hidden="true"
+      >
+        <path
+          d="M0 0 H1600 V900 H0 Z"
+          fill="#34738e"
+        />
 
-          <h2 className="mt-4 text-3xl font-extrabold leading-tight sm:text-4xl lg:text-[44px]">
-            Connect With the BioShield Team
+        <path
+          d="M0 120 C300 -80 450 20 750 80 S1250 -100 1600 75 V900 H0 Z"
+          fill="#5593ae"
+          opacity="0.55"
+        />
+
+        <path
+          d="M0 220 C300 40 550 210 850 110 S1300 60 1600 160 V900 H0 Z"
+          fill="#397d9b"
+          opacity="0.65"
+        />
+
+        <path
+          d="M0 480 C300 350 550 560 900 450 S1300 510 1600 380 V900 H0 Z"
+          fill="#276780"
+          opacity="0.65"
+        />
+
+        <path
+          d="M0 680 C300 500 600 760 950 620 S1300 650 1600 540 V900 H0 Z"
+          fill="#205c76"
+          opacity="0.65"
+        />
+
+        <path
+          d="M0 820 C300 670 600 880 950 760 S1300 790 1600 700 V900 H0 Z"
+          fill="#174d66"
+          opacity="0.45"
+        />
+      </svg>
+
+      {/* MAIN WHITE CONTACT PANEL */}
+      <div className="relative mx-auto w-full max-w-[1400px] rounded-[35px] border border-white/80 bg-white px-6 py-9 shadow-[0_15px_45px_rgba(8,45,65,0.25)] sm:px-10 lg:rounded-[65px] lg:px-16 lg:py-10">
+
+        {/* MAIN HEADING */}
+        <div className="text-center">
+          <h2 className="text-[32px] font-extrabold leading-tight tracking-tight text-[#07394d] sm:text-[42px] lg:text-[56px] xl:text-[62px]">
+            Connect with the BioShield team
           </h2>
 
-          <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-blue-100">
-            Interested in BioShield&apos;s technology, investment
-            opportunities, or strategic partnerships? Reach out to our
-            team directly.
+          <p className="mt-2 text-base font-medium leading-snug text-[#07394d] sm:text-xl lg:text-[26px]">
+            Explore our technology, pilot opportunities, and partnerships.
           </p>
         </div>
 
-        <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2 lg:gap-8">
-          {/* IZZAT CONTACT CARD */}
-          <article className="rounded-[28px] border border-white/60 bg-white/95 p-7 text-[#16495b] shadow-[0_18px_40px_rgba(8,40,60,0.2)] sm:p-9">
-            <div className="mb-6 flex items-center gap-4">
-              <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-[#e1f3f5] text-xl font-extrabold text-[#147b9b]">
-                IA
-              </div>
+        {/* TWO CONTACT COLUMNS */}
+        <div className="mx-auto mt-8 grid max-w-[1120px] grid-cols-1 gap-8 md:grid-cols-2 md:gap-0">
 
-              <div>
-                <h3 className="text-2xl font-extrabold">
-                  Izzat Azmi
-                </h3>
-                <p className="mt-1 font-semibold text-[#2581a4]">
-                  CFO | BioShield
-                </p>
-              </div>
-            </div>
+          {team.map((person, index) => (
+            <article
+              key={person.name}
+              className={`flex min-w-0 flex-col ${
+                index === 0
+                  ? "border-b border-[#25c5cd] pb-8 md:border-b-0 md:border-r md:pb-0 md:pr-10 lg:pr-14"
+                  : "md:pl-10 lg:pl-14"
+              }`}
+            >
+              {/* NAME AND ROLE */}
+              <h3 className="text-[30px] font-extrabold leading-tight tracking-tight text-[#07394d] lg:text-[40px]">
+                {person.name}
+              </h3>
 
-            <div className="h-[3px] w-20 rounded-full bg-[#f58200]" />
+              <p className="mt-1 text-xl font-bold text-[#008579] lg:text-[27px]">
+                {person.role}
+              </p>
 
-            <div className="mt-7 space-y-5">
-              <div>
-                <p className="text-xs font-bold uppercase tracking-[0.15em] text-[#718c97]">
-                  Email
-                </p>
+              {/* CONTACT INFORMATION */}
+              <div className="mt-3 flex flex-col gap-3">
+
+                {/* EMAIL */}
                 <a
-                  href="mailto:izzato11bioshield@gmail.com"
-                  className="mt-1 block break-all text-sm font-semibold text-[#16495b] hover:text-[#e87f23] sm:text-base"
+                  href={`mailto:${person.email}`}
+                  className="group flex min-w-0 items-center gap-4 text-[#101535] transition hover:text-[#e87f23]"
                 >
-                  izzato11bioshield@gmail.com
-                </a>
-              </div>
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="1.8"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="h-8 w-8 shrink-0 text-[#008579]"
+                    aria-hidden="true"
+                  >
+                    <rect
+                      x="2"
+                      y="4"
+                      width="20"
+                      height="16"
+                      rx="2"
+                    />
+                    <path d="m2 6 10 8L22 6" />
+                    <path d="m2 18 7-7M22 18l-7-7" />
+                  </svg>
 
-              <div>
-                <p className="text-xs font-bold uppercase tracking-[0.15em] text-[#718c97]">
-                  Phone
-                </p>
+                  <span className="min-w-0 break-all text-base font-medium lg:text-[21px] xl:text-[23px]">
+                    {person.email}
+                  </span>
+                </a>
+
+                {/* PHONE */}
                 <a
-                  href="tel:+16463710213"
-                  className="mt-1 block text-base font-semibold text-[#16495b] hover:text-[#e87f23]"
+                  href={`tel:${person.phoneLink}`}
+                  className="flex items-center gap-4 text-[#101535] transition hover:text-[#e87f23]"
                 >
-                  646-371-0213
-                </a>
-              </div>
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    className="h-8 w-8 shrink-0 text-[#008579]"
+                    aria-hidden="true"
+                  >
+                    <path d="M6.6 2.5c-.6-.6-1.5-.6-2.1 0L2.7 4.3c-1.8 1.8-.3 6.7 4.5 11.5s9.7 6.3 11.5 4.5l1.8-1.8c.6-.6.6-1.5 0-2.1l-3.4-3.1c-.6-.5-1.5-.5-2 .1l-1.5 1.5c-1.4-.7-2.7-1.7-3.9-2.9-1.2-1.2-2.2-2.5-2.9-3.9l1.5-1.5c.6-.6.6-1.5.1-2.1Z" />
+                  </svg>
 
-              <div>
-                <p className="text-xs font-bold uppercase tracking-[0.15em] text-[#718c97]">
-                  BioShield Links
-                </p>
+                  <span className="text-lg font-medium lg:text-[23px]">
+                    {person.phone}
+                  </span>
+                </a>
+
+                {/* LINKEDIN */}
                 <a
-                  href="https://linktr.ee/BioShieldCoats"
+                  href={`https://${person.linkedin}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-1 block break-all text-sm font-semibold text-[#2581a4] hover:text-[#e87f23] sm:text-base"
+                  className="flex min-w-0 items-start gap-4 text-[#101535] transition hover:text-[#008579]"
                 >
-                  linktr.ee/BioShieldCoats
+                  <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-md bg-[#008579] text-[25px] font-extrabold leading-none text-white">
+                    in
+                  </span>
+
+                  <div className="min-w-0">
+                    <p className="text-lg font-extrabold leading-tight lg:text-[23px]">
+                      Connect on LinkedIn
+                    </p>
+
+                    <p className="mt-1 break-all text-xs font-medium leading-snug sm:text-sm xl:text-[17px]">
+                      {person.linkedin}
+                    </p>
+                  </div>
                 </a>
               </div>
-            </div>
 
-            <a
-              href="mailto:izzato11bioshield@gmail.com"
-              className="mt-8 flex min-h-12 items-center justify-center rounded-full bg-[#f58200] px-6 py-3 text-center text-sm font-bold text-white shadow-lg transition hover:bg-[#dc7400]"
-            >
-              Email Izzat
-            </a>
-          </article>
-
-         
-{/* ZACH CONTACT CARD */}
-<article className="rounded-[28px] border border-white/60 bg-white/95 p-7 text-[#16495b] shadow-[0_18px_40px_rgba(8,40,60,0.2)] sm:p-9">
-  <div className="mb-6 flex items-center gap-4">
-    <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-[#e1f3f5] text-xl font-extrabold text-[#147b9b]">
-      ZB
-    </div>
-
-    <div>
-      <h3 className="text-2xl font-extrabold">
-        Zach Burton
-      </h3>
-      <p className="mt-1 font-semibold text-[#2581a4]">
-        CEO | BioShield
-      </p>
-    </div>
-  </div>
-
-  <div className="h-[3px] w-20 rounded-full bg-[#f58200]" />
-
-  <div className="mt-7 space-y-5">
-    {/* EMAIL */}
-    <div>
-      <p className="text-xs font-bold uppercase tracking-[0.15em] text-[#718c97]">
-        Email
-      </p>
-      <a
-        href="mailto:microbialzach@gmail.com"
-        className="mt-1 block break-all text-sm font-semibold text-[#16495b] hover:text-[#e87f23] sm:text-base"
-      >
-        microbialzach@gmail.com
-      </a>
-    </div>
-
-    {/* PHONE */}
-    <div>
-      <p className="text-xs font-bold uppercase tracking-[0.15em] text-[#718c97]">
-        Phone
-      </p>
-      <a
-        href="tel:+15735929045"
-        className="mt-1 block text-base font-semibold text-[#16495b] hover:text-[#e87f23]"
-      >
-        573-592-9045
-      </a>
-    </div>
-
-    {/* BIOSHIELD LINKS */}
-    <div>
-      <p className="text-xs font-bold uppercase tracking-[0.15em] text-[#718c97]">
-        BioShield Links
-      </p>
-      <a
-        href="https://linktr.ee/BioShieldCoats"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="mt-1 block break-all text-sm font-semibold text-[#2581a4] hover:text-[#e87f23] sm:text-base"
-      >
-        linktr.ee/BioShieldCoats
-      </a>
-    </div>
-  </div>
-
-  {/* EMAIL ZACH BUTTON */}
-  <a
-    href="mailto:microbialzach@gmail.com"
-    className="mt-8 flex min-h-12 items-center justify-center rounded-full bg-[#f58200] px-6 py-3 text-center text-sm font-bold text-white shadow-lg transition hover:bg-[#dc7400]"
-  >
-    Email Zach
-  </a>
-</article>
-
+              {/* ORANGE EMAIL BUTTON */}
+              <a
+                href={`mailto:${person.email}`}
+                className="mt-6 flex min-h-[52px] w-full items-center justify-center rounded-full bg-gradient-to-r from-[#f58200] to-[#eb7200] px-6 py-3 text-center text-xl font-extrabold text-white shadow-[0_5px_12px_rgba(235,114,0,0.12)] transition duration-300 hover:-translate-y-0.5 hover:shadow-lg lg:text-[27px]"
+              >
+                Email {person.firstName}
+              </a>
+            </article>
+          ))}
         </div>
 
-        <p className="mt-10 text-center text-sm text-blue-100">
-          BioShield Marine Coatings
+        {/* LINKTREE WITH HORIZONTAL DIVIDERS */}
+        <div className="mt-7 flex items-center justify-center gap-3 lg:gap-7">
+
+          <div className="h-[2px] flex-1 bg-[#25c5cd]" />
+
+          <a
+            href="https://linktr.ee/BioShieldCoats"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex min-w-0 items-center justify-center gap-3 text-[#07394d] transition hover:text-[#008579]"
+          >
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="h-8 w-8 shrink-0 text-[#008579] lg:h-11 lg:w-11"
+              aria-hidden="true"
+            >
+              <path d="M10 13a5 5 0 0 0 7.5.5l4-4a5 5 0 0 0-7-7l-2.3 2.3" />
+              <path d="M14 11a5 5 0 0 0-7.5-.5l-4 4a5 5 0 0 0 7 7l2.3-2.3" />
+            </svg>
+
+            <span className="break-all text-base font-extrabold sm:text-xl lg:text-[30px]">
+              linktr.ee/BioShieldCoats
+            </span>
+          </a>
+
+          <div className="h-[2px] flex-1 bg-[#25c5cd]" />
+        </div>
+
+        {/* RESEARCH TAGLINE */}
+        <p className="mt-4 text-center text-lg font-bold italic text-[#07394d] sm:text-xl lg:text-[26px]">
+          Research roots. Real-world purpose.
         </p>
+
+        {/* UNIVERSITY AND NSF ACKNOWLEDGMENTS */}
+        <div className="mx-auto mt-5 grid max-w-[1120px] grid-cols-1 items-center gap-6 md:grid-cols-2 md:gap-0">
+
+          {/* IOWA STATE UNIVERSITY */}
+          <div className="flex items-center justify-center gap-5 border-b border-[#25c5cd] pb-5 md:border-b-0 md:border-r md:pb-0 md:pr-8 lg:gap-7">
+
+            <img
+              src="/iowa-state-logo.png"
+              alt="Iowa State University seal"
+              loading="lazy"
+              className="h-[85px] w-[85px] shrink-0 object-contain lg:h-[125px] lg:w-[125px]"
+            />
+
+            <p className="text-base font-extrabold leading-tight text-[#101535] sm:text-lg lg:text-[24px]">
+              Developed at
+              <br />
+              Iowa State University
+            </p>
+          </div>
+
+          {/* NATIONAL SCIENCE FOUNDATION */}
+          <div className="flex items-center justify-center gap-5 md:pl-8 lg:gap-7">
+
+            <img
+              src="/nsf-logo.png"
+              alt="National Science Foundation logo"
+              loading="lazy"
+              className="h-[85px] w-[110px] shrink-0 object-contain lg:h-[125px] lg:w-[150px]"
+            />
+
+            <p className="text-base font-extrabold leading-tight text-[#101535] sm:text-lg lg:text-[24px]">
+              Supported by the NSF
+              <br />
+              Convergence Accelerator
+            </p>
+          </div>
+
+        </div>
       </div>
     </section>
   );
